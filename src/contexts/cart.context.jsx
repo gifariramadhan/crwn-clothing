@@ -54,8 +54,8 @@ export const CartProvider = ({ children }) => {
     setCartItems(removeCartItem(cartItems, cartItemToRemove));
   };
 
-  const decrementItemFromCart = (productToDecrement) => {
-    setCartItems(decrementQuantity(cartItems, productToDecrement));
+  const decrementItemFromCart = (cartItemToDecrement) => {
+    setCartItems(decrementQuantity(cartItems, cartItemToDecrement));
   };
 
   const cartCount = cartItems.reduce(
