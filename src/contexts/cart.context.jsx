@@ -19,13 +19,13 @@ const addCartItem = (cartItems, productToAdd) => {
 const removeCartItem = (cartItems, cartItemToRemove) =>
   cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
 
-const decrementQuantity = (cartItems, productToDecrement) => {
-  if (productToDecrement.quantity === 1) {
-    return removeCartItem(cartItems, productToDecrement);
+const decrementQuantity = (cartItems, cartItemToDecrement) => {
+  if (cartItemToDecrement.quantity === 1) {
+    return removeCartItem(cartItems, cartItemToDecrement);
   }
 
   return cartItems.map((cartItem) =>
-    cartItem.id === productToDecrement.id
+    cartItem.id === cartItemToDecrement.id
       ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem
   );
